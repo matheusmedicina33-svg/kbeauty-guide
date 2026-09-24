@@ -1,0 +1,224 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+:root {
+  --background: #fffaf8;
+  --surface: #ffffff;
+  --surface-soft: #fdf3f1;
+
+  --text: #202124;
+  --text-soft: #66616a;
+
+  --rose: #c9787f;
+  --rose-dark: #ae5f67;
+  --rose-light: #f6dddd;
+
+  --sage: #78936f;
+  --sage-light: #eef5e9;
+
+  --lavender: #efe8f7;
+
+  --border: #eee5e2;
+
+  --shadow: 0 12px 35px rgba(85, 58, 58, 0.08);
+
+  --radius-small: 12px;
+  --radius: 20px;
+  --radius-large: 30px;
+
+  --max-width: 1200px;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================
+   ESTRUTURA PRINCIPAL
+========================= */
+
+header,
+main,
+footer {
+  width: 100%;
+}
+
+main {
+  overflow: hidden;
+}
+
+section {
+  width: min(100% - 32px, var(--max-width));
+  margin-inline: auto;
+}
+
+
+/* =========================
+   TIPOGRAFIA
+========================= */
+
+h1,
+h2,
+h3 {
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: 1.6rem;
+}
+
+h2 {
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  letter-spacing: -0.04em;
+}
+
+p {
+  color: var(--text-soft);
+}
+
+
+/* =========================
+   PRIMEIRA BASE DO HEADER
+========================= */
+
+header {
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid var(--border);
+  padding: 18px max(20px, calc((100% - var(--max-width)) / 2));
+}
+
+header h1 {
+  margin-bottom: 2px;
+}
+
+header p {
+  font-size: 0.85rem;
+}
+
+
+/* =========================
+   CONTEÚDO INICIAL
+========================= */
+
+main section:first-child {
+  min-height: 70vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding-block: 70px;
+}
+
+main section:first-child > p:first-child {
+  color: var(--rose-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  font-size: 0.75rem;
+
+  margin-bottom: 18px;
+}
+
+main section:first-child h2 {
+  max-width: 780px;
+  margin-bottom: 22px;
+}
+
+main section:first-child h2 + p {
+  max-width: 650px;
+  font-size: 1.05rem;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  margin-top: 80px;
+  padding: 35px 20px;
+
+  text-align: center;
+
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+footer p {
+  font-size: 0.85rem;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 768px) {
+
+  section {
+    width: min(100% - 40px, var(--max-width));
+  }
+
+  header {
+    padding: 16px 20px;
+  }
+
+  header h1 {
+    font-size: 1.3rem;
+  }
+
+  header p {
+    font-size: 0.75rem;
+  }
+
+  main section:first-child {
+    min-height: auto;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  main section:first-child h2 {
+    font-size: 2.6rem;
+  }
+
+  main section:first-child h2 + p {
+    font-size: 1rem;
+  }
+
+}
