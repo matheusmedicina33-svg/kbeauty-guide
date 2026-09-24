@@ -1,155 +1,270 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>K-Beauty Guide</title>
-
-  <meta
-    name="description"
-    content="Comparações de skincare coreano com base em composição, ativos e evidências científicas."
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K-Beauty Guide | Skincare coreano com base em evidências</title>
+  <meta name="description" content="Comparações de skincare coreano com base em composição e evidências.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lora:wght@400;500;600&family=Caveat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
- <body>
-
-  <!-- CABEÇALHO -->
-  <header class="site-header">
-    <div class="header-inner">
-
-      <a href="index.html" class="brand">
-        <div class="brand-icon">✦</div>
-
-        <div class="brand-text">
+  <!-- ============ CABEÇALHO ============ -->
+  <header class="topo">
+    <div class="container topo-conteudo">
+      <a href="#inicio" class="logo">
+        <span class="logo-icone">❀</span>
+        <span>
           <strong>K-Beauty Guide</strong>
-          <span>Skincare coreano baseado em composição e evidências</span>
-        </div>
+          <small>Comparações de skincare coreano com base em composição e evidências</small>
+        </span>
       </a>
 
-      <nav class="main-nav">
-        <a href="index.html" class="active">Início</a>
+      <nav class="menu" id="menu">
+        <a href="#inicio" class="ativo">Início</a>
         <a href="#metodologia">Metodologia</a>
         <a href="#comparacoes">Comparações</a>
         <a href="#transparencia">Transparência</a>
+        <a href="#referencias">Referências</a>
       </nav>
 
+      <div class="topo-icones">
+        <a href="#" aria-label="Buscar">🔍</a>
+        <a href="#" aria-label="Instagram" class="rede">IG</a>
+        <a href="#" aria-label="TikTok" class="rede">TT</a>
+        <a href="#" aria-label="YouTube" class="rede">YT</a>
+      </div>
+
+      <button class="botao-menu" aria-label="Abrir menu" onclick="document.getElementById('menu').classList.toggle('aberto')">☰</button>
     </div>
   </header>
 
-
-  <main>
-
-    <!-- HERO -->
-    <section class="hero">
-
-      <div class="hero-content">
-
-        <span class="hero-eyebrow">
-          SKINCARE COREANO COM INFORMAÇÃO DE VERDADE
-        </span>
-
-        <h1>
-          Descubra qual produto faz mais sentido para sua pele
-        </h1>
-
-        <p class="hero-description">
-          Comparamos produtos de skincare coreano com base em composição
-          INCI, ativos, mecanismo de ação, evidências científicas e
-          adequação para diferentes tipos de pele.
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="inicio">
+    <div class="container hero-conteudo">
+      <div class="hero-texto">
+        <p class="sobretitulo">Skincare coreano com informação de verdade</p>
+        <h1>Descubra qual produto faz mais sentido para sua pele</h1>
+        <p class="hero-descricao">
+          Comparamos produtos de skincare coreano com base em composição (INCI),
+          ativos, evidências científicas e adequação ao seu tipo de pele, para te ajudar
+          a fazer escolhas mais informadas e seguras.
         </p>
 
-        <div class="hero-buttons">
-
-          <a href="#comparacoes" class="button button-primary">
-            Ver comparações
-            <span>→</span>
-          </a>
-
-          <a href="#metodologia" class="button button-secondary">
-            Entender a metodologia
-          </a>
-
+        <div class="hero-botoes">
+          <a href="#comparacoes" class="botao botao-cheio">🔍 Ver comparações →</a>
+          <a href="#metodologia" class="botao botao-contorno">📖 Entender a metodologia</a>
         </div>
 
-        <div class="hero-benefits">
-
-          <div class="benefit">
-            <span class="benefit-icon">⌁</span>
-            <span>
-              Análises baseadas<br>
-              em evidências
-            </span>
-          </div>
-
-          <div class="benefit">
-            <span class="benefit-icon">◌</span>
-            <span>
-              Foco em composição<br>
-              e ciência
-            </span>
-          </div>
-
-          <div class="benefit">
-            <span class="benefit-icon">♡</span>
-            <span>
-              Indicações por tipo<br>
-              e necessidade da pele
-            </span>
-          </div>
-
+        <div class="hero-selos">
+          <div class="selo"><span>🍃</span><p>Análises imparciais<br>e baseadas em evidências</p></div>
+          <div class="selo"><span>⚗️</span><p>Foco em composição<br>e ciência, não em hype</p></div>
+          <div class="selo"><span>♡</span><p>Indicações por tipo<br>de pele e necessidade</p></div>
         </div>
-
       </div>
 
+      <div class="hero-imagem">
+        <!-- Coloque sua foto em imagens/hero.png -->
+        <img src="imagens/hero.png" alt="Produtos de skincare coreano" onerror="this.style.display='none'">
+        <p class="frase-manuscrita">Boa pele<br>começa com<br>boa informação ♡</p>
+      </div>
+    </div>
+  </section>
 
-      <div class="hero-visual">
-
-        <div class="hero-decoration hero-decoration-one"></div>
-        <div class="hero-decoration hero-decoration-two"></div>
-
-        <div class="hero-card">
-
-          <span class="hero-card-small">
-            Escolhas mais informadas
-          </span>
-
-          <strong>
-            Sua pele.<br>
-            Sua necessidade.<br>
-            A formulação certa.
-          </strong>
-
-          <p>
-            Sem depender apenas de propaganda ou hype.
-          </p>
-
+  <!-- ============ COMPARAÇÕES EM DESTAQUE ============ -->
+  <section class="secao" id="comparacoes">
+    <div class="container">
+      <div class="secao-cabecalho">
+        <div>
+          <h2>Comparações em destaque</h2>
+          <p>Análises completas dos produtos mais buscados de skincare coreano.</p>
         </div>
-
+        <a href="#" class="botao-pilula">Ver todas as comparações →</a>
       </div>
 
-    </section>
+      <div class="grade-produtos">
 
-  </main>
+        <article class="card-produto">
+          <div class="produto-foto"><img src="imagens/produto1.png" alt="Beauty of Joseon Glow Serum" onerror="this.style.display='none'"></div>
+          <div class="produto-info">
+            <span class="etiqueta rosa">Mais popular</span>
+            <h3>Beauty of Joseon Glow Serum</h3>
+            <p>Hiperpigmentação e viço da pele</p>
+            <div class="tags"><span>Niacinamida</span><span>Arroz</span></div>
+          </div>
+          <div class="produto-botoes">
+            <a href="#" class="btn-ler">Ler análise</a>
+            <a href="#" class="btn-comprar">Comprar</a>
+          </div>
+        </article>
 
+        <article class="card-produto">
+          <div class="produto-foto"><img src="imagens/produto2.png" alt="SKIN1004 Madagascar Centella Ampoule" onerror="this.style.display='none'"></div>
+          <div class="produto-info">
+            <span class="etiqueta verde">Para acne</span>
+            <h3>SKIN1004 Madagascar Centella Ampoule</h3>
+            <p>Acne e oleosidade</p>
+            <div class="tags"><span>Centella Asiática</span><span>Calmante</span></div>
+          </div>
+          <div class="produto-botoes">
+            <a href="#" class="btn-ler">Ler análise</a>
+            <a href="#" class="btn-comprar">Comprar</a>
+          </div>
+        </article>
 
-  <footer>
-    <p>
-      © 2026 K-Beauty Guide
-    </p>
+        <article class="card-produto">
+          <div class="produto-foto"><img src="imagens/produto3.png" alt="COSRX Advanced Snail 96 Essence" onerror="this.style.display='none'"></div>
+          <div class="produto-info">
+            <span class="etiqueta lilas">Fortalece a barreira</span>
+            <h3>COSRX Advanced Snail 96 Essence</h3>
+            <p>Barreira cutânea e hidratação</p>
+            <div class="tags"><span>Snail mucin</span><span>Reparação</span></div>
+          </div>
+          <div class="produto-botoes">
+            <a href="#" class="btn-ler">Ler análise</a>
+            <a href="#" class="btn-comprar">Comprar</a>
+          </div>
+        </article>
+
+        <article class="card-produto">
+          <div class="produto-foto"><img src="imagens/produto4.png" alt="Round Lab 1025 Dokdo Cleanser" onerror="this.style.display='none'"></div>
+          <div class="produto-info">
+            <span class="etiqueta rosa">Para pele sensível</span>
+            <h3>Round Lab 1025 Dokdo Cleanser</h3>
+            <p>Limpeza gentil e pele sensível</p>
+            <div class="tags"><span>Aminoácidos</span><span>pH equilibrado</span></div>
+          </div>
+          <div class="produto-botoes">
+            <a href="#" class="btn-ler">Ler análise</a>
+            <a href="#" class="btn-comprar">Comprar</a>
+          </div>
+        </article>
+
+        <article class="card-produto">
+          <div class="produto-foto"><img src="imagens/produto5.png" alt="LANEIGE Water Sleeping Mask" onerror="this.style.display='none'"></div>
+          <div class="produto-info">
+            <span class="etiqueta azul">Hidratação intensa</span>
+            <h3>LANEIGE Water Sleeping Mask</h3>
+            <p>Hidratação e recuperação da pele</p>
+            <div class="tags"><span>Hialurônico</span><span>Provitamina B5</span></div>
+          </div>
+          <div class="produto-botoes">
+            <a href="#" class="btn-ler">Ler análise</a>
+            <a href="#" class="btn-comprar">Comprar</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ METODOLOGIA ============ -->
+  <section class="secao" id="metodologia">
+    <div class="container">
+      <h2>Como fazemos as comparações</h2>
+      <p class="subtitulo">Uma análise completa e transparente, do rótulo à evidência científica.</p>
+
+      <div class="grade-metodo">
+        <div class="item-metodo"><span class="icone-redondo rosa">📄</span><div><h4>Composição INCI</h4><p>Analisamos a lista completa de ingredientes.</p></div></div>
+        <div class="item-metodo"><span class="icone-redondo verde">🍃</span><div><h4>Ativos principais</h4><p>Identificamos e explicamos os ativos mais relevantes.</p></div></div>
+        <div class="item-metodo"><span class="icone-redondo rosa">🧬</span><div><h4>Mecanismo de ação</h4><p>Como os ativos atuam na pele.</p></div></div>
+        <div class="item-metodo"><span class="icone-redondo lilas">📊</span><div><h4>Evidência científica</h4><p>Avaliamos estudos clínicos e publicações confiáveis.</p></div></div>
+        <div class="item-metodo"><span class="icone-redondo rosa">⚠️</span><div><h4>Potenciais irritantes</h4><p>Sinalizamos componentes que podem causar reações.</p></div></div>
+        <div class="item-metodo"><span class="icone-redondo rosa">👤</span><div><h4>Adequação por tipo de pele</h4><p>Indicamos para quem o produto faz mais sentido.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRANSPARÊNCIA + CIÊNCIA ============ -->
+  <section class="secao">
+    <div class="container-largo grade-avisos">
+      <div class="aviso aviso-verde" id="transparencia">
+        <span class="icone-redondo verde grande">🍃</span>
+        <div>
+          <h3>Transparência sempre</h3>
+          <p>Alguns links deste site são links de afiliado. Isso significa que podemos receber uma pequena comissão
+          se você comprar através deles, sem nenhum custo adicional para você. Nossas análises são independentes,
+          honestas e baseadas em evidências científicas.</p>
+        </div>
+        <a href="#" class="botao-branco">Saiba mais sobre nossa transparência →</a>
+      </div>
+
+      <div class="aviso aviso-lilas" id="referencias">
+        <span class="icone-redondo lilas grande">📖</span>
+        <div>
+          <h3>Baseado em ciência</h3>
+          <p>Nossas análises são fundamentadas em estudos científicos e fontes confiáveis, para que você tenha
+          informações seguras e atualizadas.</p>
+        </div>
+        <a href="#" class="botao-branco lilas-borda">Ver referências →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTEÚDOS RECENTES ============ -->
+  <section class="secao">
+    <div class="container">
+      <div class="secao-cabecalho">
+        <div>
+          <h2>Conteúdos recentes</h2>
+          <p>Artigos, guias e dicas para uma rotina de skincare mais informada.</p>
+        </div>
+        <a href="#" class="botao-pilula">Ver todos os artigos →</a>
+      </div>
+
+      <div class="grade-artigos">
+        <article class="card-artigo">
+          <div class="artigo-foto"><img src="imagens/artigo1.jpg" alt="" onerror="this.style.display='none'"></div>
+          <div>
+            <span class="etiqueta rosa">Guia</span>
+            <h3>Como montar uma rotina de skincare coreano (passo a passo)</h3>
+            <p>Um guia completo para iniciantes, com a ordem correta dos produtos.</p>
+          </div>
+        </article>
+        <article class="card-artigo">
+          <div class="artigo-foto"><img src="imagens/artigo2.jpg" alt="" onerror="this.style.display='none'"></div>
+          <div>
+            <span class="etiqueta cinza">Educação</span>
+            <h3>Niacinamida: o que a ciência diz sobre seus benefícios?</h3>
+            <p>Entenda como esse ativo funciona, suas evidências e para quem é indicado.</p>
+          </div>
+        </article>
+        <article class="card-artigo">
+          <div class="artigo-foto"><img src="imagens/artigo3.jpg" alt="" onerror="this.style.display='none'"></div>
+          <div>
+            <span class="etiqueta laranja">Ingredientes</span>
+            <h3>Centella Asiática: benefícios comprovados e como usar</h3>
+            <p>Uma análise completa sobre esse ativo queridinho do skincare coreano.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RODAPÉ ============ -->
+  <footer class="rodape">
+    <div class="container rodape-conteudo">
+      <div class="rodape-logo">
+        <span class="logo-icone">❀</span> <strong>K-Beauty Guide</strong>
+        <small>Comparações de skincare coreano com base em composição e evidências.</small>
+      </div>
+      <nav>
+        <a href="#inicio">Início</a>
+        <a href="#metodologia">Metodologia</a>
+        <a href="#comparacoes">Comparações</a>
+        <a href="#transparencia">Transparência</a>
+        <a href="#referencias">Referências</a>
+      </nav>
+      <div class="topo-icones">
+        <a href="#" class="rede">IG</a>
+        <a href="#" class="rede">TT</a>
+        <a href="#" class="rede">YT</a>
+      </div>
+    </div>
   </footer>
 
 </body>
-
-</body>
-
 </html>
