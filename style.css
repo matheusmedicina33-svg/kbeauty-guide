@@ -111,10 +111,10 @@ h1, h2, h3, h4 { font-family: "Playfair Display", Georgia, serif; }
 .card-produto {
   background: #fff; border: 1px solid var(--borda); border-radius: 12px;
   padding: 14px; display: grid;
-  grid-template-columns: 90px 1fr; grid-template-rows: 1fr auto; gap: 10px;
+  grid-template-columns: 80px 1fr; grid-template-rows: 1fr auto; gap: 10px;
 }
 .produto-foto {
-  grid-row: 1 / 3; background: #faf3f1; border-radius: 10px;
+  background: #faf3f1; border-radius: 10px;
   display: flex; align-items: center; justify-content: center; min-height: 150px;
 }
 .produto-foto img { max-height: 150px; object-fit: contain; }
@@ -132,8 +132,8 @@ h1, h2, h3, h4 { font-family: "Playfair Display", Georgia, serif; }
 .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
 .tags span { font-size: 11px; border: 1px solid var(--borda); border-radius: 10px; padding: 2px 8px; color: var(--texto-suave); }
 
-.produto-botoes { display: flex; gap: 6px; }
-.produto-botoes a { flex: 1; text-align: center; padding: 6px 4px; border-radius: 6px; font-size: 13px; }
+.produto-botoes { display: flex; gap: 6px; grid-column: 1 / 3; }
+.produto-botoes a { flex: 1; text-align: center; padding: 6px 4px; border-radius: 6px; font-size: 13px; white-space: nowrap; }
 .btn-ler { border: 1px solid var(--borda); }
 .btn-ler:hover { border-color: var(--rosa); }
 .btn-comprar { background: var(--rosa); color: #fff; font-weight: 600; }
@@ -197,12 +197,75 @@ h1, h2, h3, h4 { font-family: "Playfair Display", Georgia, serif; }
 .rodape nav { display: flex; gap: 40px; font-size: 13px; }
 .rodape nav a:hover { color: var(--rosa); }
 
+/* ============ OBJETIVOS (página inicial) ============ */
+.grade-objetivos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.card-objetivo {
+  background: #fff; border: 1px solid var(--borda); border-radius: 12px; padding: 16px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.card-objetivo h3 { font-size: 16px; }
+.card-objetivo p { font-size: 13px; color: var(--texto-suave); flex: 1; }
+.card-objetivo .etiqueta { align-self: flex-start; }
+.card-objetivo .link-objetivo { color: var(--rosa-escuro); font-weight: 600; font-size: 14px; }
+a.card-objetivo:hover { border-color: var(--rosa); }
+.card-objetivo.em-breve { opacity: 0.6; }
+
+/* ============ PÁGINAS INTERNAS ============ */
+.pagina-topo { background: linear-gradient(90deg, #fbeeec 0%, #f6dcd8 100%); padding: 36px 0 30px; }
+.pagina-topo h1 { font-size: clamp(28px, 4vw, 40px); line-height: 1.15; margin-bottom: 10px; max-width: 760px; }
+.pagina-topo p { color: var(--texto-suave); max-width: 680px; }
+.migalha { font-size: 13px; color: var(--texto-suave); margin-bottom: 10px; }
+.migalha a { color: var(--rosa-escuro); }
+
+.texto { max-width: 760px; }
+.texto h2 { font-size: 24px; margin: 28px 0 10px; }
+.texto h3 { font-size: 18px; margin: 20px 0 6px; }
+.texto p, .texto li { color: #463c3c; margin-bottom: 10px; }
+.texto ul, .texto ol { padding-left: 22px; }
+.texto a { color: var(--rosa-escuro); text-decoration: underline; }
+
+.caixa-aviso { background: var(--verde); border-radius: 10px; padding: 14px 18px; font-size: 14px; margin: 16px 0; }
+.caixa-aviso.lilas { background: var(--lilas); }
+.caixa-aviso a { text-decoration: underline; color: var(--rosa-escuro); }
+
+/* ============ COMPARAÇÃO ============ */
+.tabela-rolagem { overflow-x: auto; margin: 10px 0 20px; }
+.tabela-resumo { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; font-size: 14px; min-width: 620px; }
+.tabela-resumo th, .tabela-resumo td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--borda); vertical-align: top; }
+.tabela-resumo th { background: var(--rosa-claro); font-family: "Playfair Display", serif; }
+.tabela-resumo a { color: var(--rosa-escuro); font-weight: 600; }
+
+.analise-produto {
+  background: #fff; border: 1px solid var(--borda); border-radius: 14px;
+  padding: 22px; margin: 22px 0; scroll-margin-top: 90px;
+}
+.analise-cabecalho { display: grid; grid-template-columns: 140px 1fr; gap: 20px; align-items: center; margin-bottom: 14px; }
+.analise-cabecalho .produto-foto { min-height: 160px; }
+.analise-cabecalho h2 { font-size: 24px; margin: 6px 0; }
+.analise-cabecalho p { color: var(--texto-suave); }
+.analise-produto h3 { font-size: 17px; margin: 18px 0 6px; }
+.analise-produto p, .analise-produto li { font-size: 15px; color: #463c3c; }
+.analise-produto ul { padding-left: 22px; }
+
+details.inci { background: #faf5f4; border-radius: 8px; padding: 10px 14px; margin-top: 6px; }
+details.inci summary { cursor: pointer; font-weight: 600; color: var(--rosa-escuro); }
+details.inci p { margin-top: 8px; font-size: 13px; }
+
+.nota-evidencia { background: var(--lilas); border-radius: 8px; padding: 10px 14px; font-size: 13px; margin-top: 8px; }
+
+.analise-compra { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--borda); }
+.analise-compra small { color: var(--texto-suave); font-size: 12px; }
+
+.lista-refs { padding-left: 22px; font-size: 14px; }
+.lista-refs li { margin-bottom: 8px; color: #463c3c; }
+
 /* ============ RESPONSIVO (tablet e celular) ============ */
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   .grade-produtos { grid-template-columns: repeat(3, 1fr); }
   .grade-metodo { grid-template-columns: repeat(3, 1fr); row-gap: 20px; }
   .item-metodo { border-right: none; padding: 0; }
   .grade-avisos, .grade-artigos { grid-template-columns: 1fr; }
+  .grade-objetivos { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 800px) {
@@ -217,11 +280,23 @@ h1, h2, h3, h4 { font-family: "Playfair Display", Georgia, serif; }
 
   .hero-conteudo { grid-template-columns: 1fr; }
   .hero-imagem { min-height: 200px; }
-  .grade-produtos, .grade-metodo { grid-template-columns: 1fr; }
+  .grade-produtos, .grade-metodo, .grade-objetivos { grid-template-columns: 1fr; }
+  .analise-cabecalho { grid-template-columns: 1fr; }
+  .analise-produto { padding: 16px; }
   .secao-cabecalho { flex-direction: column; align-items: flex-start; }
   .aviso { flex-direction: column; align-items: flex-start; }
   .rodape nav { gap: 16px; flex-wrap: wrap; }
 }
-```
 
-Cola esse no `style.css`, dá o commit e me avisa. Aí eu te mando o `index.html` do mesmo jeito.
+/* ============ ÍCONES ============ */
+.icone { width: 24px; height: 24px; display: block; }
+.logo-icone .icone { width: 30px; height: 30px; }
+.rodape-logo .logo-icone .icone { width: 22px; height: 22px; }
+.rede { display: flex; }
+.rede .icone { width: 20px; height: 20px; }
+.rede:hover { color: var(--rosa-escuro); }
+.selo span { color: var(--rosa); }
+.icone-redondo.rosa { color: var(--rosa-escuro); }
+.icone-redondo.verde { color: var(--verde-escuro); }
+.icone-redondo.lilas { color: var(--lilas-escuro); }
+.icone-redondo.grande .icone { width: 28px; height: 28px; }
