@@ -1,0 +1,21 @@
+# Configuração do site. Normalmente você não precisa mexer aqui.
+title: K-Beauty Guide
+description: Comparações de skincare coreano com base em composição e evidências
+baseurl: "/kbeauty-guide"
+lang: pt-BR
+
+collections:
+  comparacoes:
+    output: true
+    permalink: /comparacoes/:title/
+
+exclude:
+  - COMO-USAR.md
+  - README.md
+
+defaults:
+  - scope:
+      type: comparacoes
+    values:
+      layout: comparacao
+      menu: Comparações

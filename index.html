@@ -1,57 +1,18 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>K-Beauty Guide | Skincare coreano com base em evidências</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lora:wght@400;500;600&family=Caveat&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <!-- ============ CABEÇALHO ============ -->
-  <header class="topo">
-    <div class="container topo-conteudo">
-      <a href="index.html" class="logo">
-        <span class="logo-icone"><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21c-4-2-7-5.5-7-10 2.5 0 5 1.5 7 4 2-2.5 4.5-4 7-4 0 4.5-3 8-7 10z"/><path d="M12 15c-1.5-2-2-4.5-1-8 .4-1.5 1-2.5 1-4 0 1.5.6 2.5 1 4 1 3.5.5 6-1 8z"/></svg></span>
-        <span>
-          <strong>K-Beauty Guide</strong>
-          <small>Comparações de skincare coreano com base em composição e evidências</small>
-        </span>
-      </a>
-      <nav class="menu" id="menu">
-        <a href="index.html" class="ativo">Início</a>
-        <a href="metodologia.html">Metodologia</a>
-        <a href="comparacoes/index.html">Comparações</a>
-        <a href="transparencia.html">Transparência</a>
-        <a href="referencias.html">Referências</a>
-      </nav>
-      <div class="topo-icones">
-        <!-- TROQUE o # pelo link do seu perfil em cada rede -->
-        <a href="#" target="_blank" rel="noopener" aria-label="Instagram" class="rede"><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
-        <a href="#" target="_blank" rel="noopener" aria-label="TikTok" class="rede"><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3c.4 2.4 2 4.1 4.5 4.4V11c-1.7 0-3.2-.5-4.5-1.4V15a6 6 0 1 1-6-6v3.4A2.6 2.6 0 1 0 11.6 15V3z"/></svg></a>
-        <a href="#" target="_blank" rel="noopener" aria-label="YouTube" class="rede"><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg></a>
-      </div>
-      <button class="botao-menu" aria-label="Abrir menu" onclick="document.getElementById('menu').classList.toggle('aberto')"><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-    </div>
-  </header>
-
-  <!-- ============ HERO ============ -->
-  <section class="hero" id="inicio">
+---
+layout: default
+title: Início
+menu: Início
+---
+{% assign ini = site.data.inicio %}
+  <section class="hero">
     <div class="container hero-conteudo">
       <div class="hero-texto">
-        <p class="sobretitulo">Skincare coreano com informação de verdade</p>
-        <h1>Descubra qual produto faz mais sentido para sua pele</h1>
-        <p class="hero-descricao">
-          Comparamos produtos de skincare coreano com base em composição (INCI),
-          ativos, evidências científicas e adequação ao seu tipo de pele, para te ajudar
-          a fazer escolhas mais informadas e seguras.
-        </p>
+        <p class="sobretitulo">{{ ini.sobretitulo }}</p>
+        <h1>{{ ini.titulo }}</h1>
+        <p class="hero-descricao">{{ ini.descricao }}</p>
         <div class="hero-botoes">
-          <a href="comparacoes/index.html" class="botao botao-cheio">Ver comparações →</a>
-          <a href="metodologia.html" class="botao botao-contorno">Entender a metodologia</a>
+          <a href="{{ '/comparacoes/' | relative_url }}" class="botao botao-cheio">Ver comparações →</a>
+          <a href="{{ '/metodologia.html' | relative_url }}" class="botao botao-contorno">Entender a metodologia</a>
         </div>
         <div class="hero-selos">
           <div class="selo"><span><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.4 5.1-6C9.5 14.5 12 13 13 12"/></svg></span><p>Análises imparciais<br>e baseadas em evidências</p></div>
@@ -60,14 +21,29 @@
         </div>
       </div>
       <div class="hero-imagem">
-        <!-- Coloque sua foto em imagens/hero.png -->
-        <img src="imagens/hero.png" alt="Produtos de skincare coreano" onerror="this.style.display='none'">
-        <p class="frase-manuscrita">Boa pele<br>começa com<br>boa informação ♡</p>
+        {% if ini.imagem_hero.size > 0 %}<img src="{{ ini.imagem_hero | relative_url }}" alt="Produtos de skincare coreano">{% endif %}
+        {% if ini.frase_manuscrita.size > 0 %}<p class="frase-manuscrita">{{ ini.frase_manuscrita | newline_to_br }}</p>{% endif %}
       </div>
     </div>
   </section>
 
-  <!-- ============ PRODUTOS EM DESTAQUE ============ -->
+{% assign comps = site.comparacoes | sort: "ordem", "last" %}
+{% capture cards %}{% for c in comps %}{% if c.status == "publicado" %}{% for p in c.produtos %}{% if p.destaque %}
+        <article class="card-produto">
+          <div class="produto-foto">{% if p.imagem.size > 0 %}<img src="{{ p.imagem | relative_url }}" alt="{{ p.nome | escape }}">{% endif %}</div>
+          <div class="produto-info">
+            {% if p.foco.size > 0 %}<span class="etiqueta {{ p.cor | default: 'rosa' }}">Foco: {{ p.foco }}</span>{% endif %}
+            <h3>{{ p.nome }}</h3>
+            <p>{{ p.resumo }}</p>
+            <div class="tags">{% for t in p.tags %}<span>{{ t }}</span>{% endfor %}</div>
+          </div>
+          <div class="produto-botoes">
+            <a href="{{ c.url | relative_url }}#produto-{{ forloop.index }}" class="btn-ler">Ler análise</a>
+            {% if p.link_afiliado.size > 0 %}<a href="{{ p.link_afiliado }}" target="_blank" rel="sponsored nofollow noopener" class="btn-comprar">Comprar</a>{% endif %}
+          </div>
+        </article>
+{% endif %}{% endfor %}{% endif %}{% endfor %}{% endcapture %}
+{% if cards contains "card-produto" %}
   <section class="secao">
     <div class="container">
       <div class="secao-cabecalho">
@@ -75,90 +51,15 @@
           <h2>Comparações em destaque</h2>
           <p>Análises completas dos produtos mais buscados de skincare coreano.</p>
         </div>
-        <a href="comparacoes/index.html" class="botao-pilula">Ver todas as comparações →</a>
+        <a href="{{ '/comparacoes/' | relative_url }}" class="botao-pilula">Ver todas as comparações →</a>
       </div>
       <div class="grade-produtos">
-
-        <!-- PRODUTO 1: troque nome, textos, foto (imagens/produto1.png) e o link de afiliado -->
-        <article class="card-produto">
-          <div class="produto-foto"><img src="imagens/produto1.png" alt="Beauty of Joseon Glow Serum" onerror="this.style.display='none'"></div>
-          <div class="produto-info">
-            <span class="etiqueta rosa">Foco: Hiperpigmentação</span>
-            <h3>Beauty of Joseon Glow Serum</h3>
-            <p>Hiperpigmentação e viço da pele</p>
-            <div class="tags"><span>Niacinamida</span><span>Arroz</span></div>
-          </div>
-          <div class="produto-botoes">
-            <a href="comparacoes/exemplo.html#produto-1" class="btn-ler">Ler análise</a>
-            <a href="https://www.amazon.com.br/" target="_blank" rel="sponsored nofollow noopener" class="btn-comprar">Comprar</a>
-          </div>
-        </article>
-
-        <!-- PRODUTO 2: troque nome, textos, foto (imagens/produto2.png) e o link de afiliado -->
-        <article class="card-produto">
-          <div class="produto-foto"><img src="imagens/produto2.png" alt="SKIN1004 Madagascar Centella Ampoule" onerror="this.style.display='none'"></div>
-          <div class="produto-info">
-            <span class="etiqueta verde">Foco: Acne e oleosidade</span>
-            <h3>SKIN1004 Madagascar Centella Ampoule</h3>
-            <p>Pele oleosa e com tendência à acne</p>
-            <div class="tags"><span>Centella Asiática</span><span>Calmante</span></div>
-          </div>
-          <div class="produto-botoes">
-            <a href="comparacoes/exemplo.html#produto-2" class="btn-ler">Ler análise</a>
-            <a href="https://www.amazon.com.br/" target="_blank" rel="sponsored nofollow noopener" class="btn-comprar">Comprar</a>
-          </div>
-        </article>
-
-        <!-- PRODUTO 3: troque nome, textos, foto (imagens/produto3.png) e o link de afiliado -->
-        <article class="card-produto">
-          <div class="produto-foto"><img src="imagens/produto3.png" alt="COSRX Advanced Snail 96 Essence" onerror="this.style.display='none'"></div>
-          <div class="produto-info">
-            <span class="etiqueta lilas">Foco: Barreira cutânea</span>
-            <h3>COSRX Advanced Snail 96 Essence</h3>
-            <p>Barreira cutânea e hidratação</p>
-            <div class="tags"><span>Snail mucin</span><span>Reparação</span></div>
-          </div>
-          <div class="produto-botoes">
-            <a href="comparacoes/exemplo.html#produto-3" class="btn-ler">Ler análise</a>
-            <a href="https://www.amazon.com.br/" target="_blank" rel="sponsored nofollow noopener" class="btn-comprar">Comprar</a>
-          </div>
-        </article>
-
-        <!-- PRODUTO 4: troque nome, textos, foto (imagens/produto4.png) e o link de afiliado -->
-        <article class="card-produto">
-          <div class="produto-foto"><img src="imagens/produto4.png" alt="Round Lab 1025 Dokdo Cleanser" onerror="this.style.display='none'"></div>
-          <div class="produto-info">
-            <span class="etiqueta rosa">Foco: Pele sensível</span>
-            <h3>Round Lab 1025 Dokdo Cleanser</h3>
-            <p>Limpeza gentil e pele sensível</p>
-            <div class="tags"><span>Aminoácidos</span><span>pH equilibrado</span></div>
-          </div>
-          <div class="produto-botoes">
-            <a href="comparacoes/exemplo.html#produto-4" class="btn-ler">Ler análise</a>
-            <a href="https://www.amazon.com.br/" target="_blank" rel="sponsored nofollow noopener" class="btn-comprar">Comprar</a>
-          </div>
-        </article>
-
-        <!-- PRODUTO 5: troque nome, textos, foto (imagens/produto5.png) e o link de afiliado -->
-        <article class="card-produto">
-          <div class="produto-foto"><img src="imagens/produto5.png" alt="LANEIGE Water Sleeping Mask" onerror="this.style.display='none'"></div>
-          <div class="produto-info">
-            <span class="etiqueta azul">Foco: Hidratação</span>
-            <h3>LANEIGE Water Sleeping Mask</h3>
-            <p>Hidratação e recuperação da pele</p>
-            <div class="tags"><span>Hialurônico</span><span>Provitamina B5</span></div>
-          </div>
-          <div class="produto-botoes">
-            <a href="comparacoes/exemplo.html#produto-5" class="btn-ler">Ler análise</a>
-            <a href="https://www.amazon.com.br/" target="_blank" rel="sponsored nofollow noopener" class="btn-comprar">Comprar</a>
-          </div>
-        </article>
-
+{{ cards }}
       </div>
     </div>
   </section>
+{% endif %}
 
-  <!-- ============ COMPARAÇÕES POR OBJETIVO ============ -->
   <section class="secao">
     <div class="container">
       <div class="secao-cabecalho">
@@ -168,15 +69,11 @@
         </div>
       </div>
       <div class="grade-objetivos">
-        <a href="comparacoes/exemplo.html" class="card-objetivo"><h3>Hiperpigmentação</h3><p>Manchas, melasma e tom irregular.</p><span class="link-objetivo">Ver comparação →</span></a>
-        <div class="card-objetivo em-breve"><h3>Acne e oleosidade</h3><p>Controle de oleosidade e poros.</p><span class="etiqueta cinza">Em breve</span></div>
-        <div class="card-objetivo em-breve"><h3>Barreira cutânea</h3><p>Pele ressecada, sensibilizada ou descamando.</p><span class="etiqueta cinza">Em breve</span></div>
-        <div class="card-objetivo em-breve"><h3>Hidratação</h3><p>Hidratantes, essências e máscaras noturnas.</p><span class="etiqueta cinza">Em breve</span></div>
+      {% for c in comps %}{% include cartao-objetivo.html %}{% endfor %}
       </div>
     </div>
   </section>
 
-  <!-- ============ METODOLOGIA (resumo) ============ -->
   <section class="secao">
     <div class="container">
       <div class="secao-cabecalho">
@@ -184,7 +81,7 @@
           <h2>Como fazemos as comparações</h2>
           <p>Uma análise completa e transparente, do rótulo à evidência científica.</p>
         </div>
-        <a href="metodologia.html" class="botao-pilula">Ver metodologia completa →</a>
+        <a href="{{ '/metodologia.html' | relative_url }}" class="botao-pilula">Ver metodologia completa →</a>
       </div>
       <div class="grade-metodo">
         <div class="item-metodo"><span class="icone-redondo rosa"><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg></span><div><h4>Composição INCI</h4><p>Analisamos a lista completa de ingredientes.</p></div></div>
@@ -197,7 +94,6 @@
     </div>
   </section>
 
-  <!-- ============ TRANSPARÊNCIA + CIÊNCIA ============ -->
   <section class="secao">
     <div class="container-largo grade-avisos">
       <div class="aviso aviso-verde">
@@ -208,7 +104,7 @@
           se você comprar através deles, sem nenhum custo adicional para você. Nossas análises são independentes
           e baseadas em evidências científicas.</p>
         </div>
-        <a href="transparencia.html" class="botao-branco">Saiba mais sobre nossa transparência →</a>
+        <a href="{{ '/transparencia.html' | relative_url }}" class="botao-branco">Saiba mais sobre nossa transparência →</a>
       </div>
       <div class="aviso aviso-lilas">
         <span class="icone-redondo lilas grande"><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg></span>
@@ -217,33 +113,7 @@
           <p>Nossas análises são fundamentadas em estudos científicos e fontes confiáveis, para que você tenha
           informações seguras e atualizadas.</p>
         </div>
-        <a href="referencias.html" class="botao-branco lilas-borda">Ver referências →</a>
+        <a href="{{ '/referencias.html' | relative_url }}" class="botao-branco lilas-borda">Ver referências →</a>
       </div>
     </div>
   </section>
-
-  <!-- ============ RODAPÉ ============ -->
-  <footer class="rodape">
-    <div class="container rodape-conteudo">
-      <div class="rodape-logo">
-        <span class="logo-icone"><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21c-4-2-7-5.5-7-10 2.5 0 5 1.5 7 4 2-2.5 4.5-4 7-4 0 4.5-3 8-7 10z"/><path d="M12 15c-1.5-2-2-4.5-1-8 .4-1.5 1-2.5 1-4 0 1.5.6 2.5 1 4 1 3.5.5 6-1 8z"/></svg></span> <strong>K-Beauty Guide</strong>
-        <small>Alguns links são de afiliado. <a href="transparencia.html" style="text-decoration:underline">Saiba mais</a>.</small>
-      </div>
-      <nav>
-        <a href="index.html">Início</a>
-        <a href="metodologia.html">Metodologia</a>
-        <a href="comparacoes/index.html">Comparações</a>
-        <a href="transparencia.html">Transparência</a>
-        <a href="referencias.html">Referências</a>
-      </nav>
-      <div class="topo-icones">
-        <!-- TROQUE o # pelo link do seu perfil em cada rede -->
-        <a href="#" target="_blank" rel="noopener" aria-label="Instagram" class="rede"><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
-        <a href="#" target="_blank" rel="noopener" aria-label="TikTok" class="rede"><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3c.4 2.4 2 4.1 4.5 4.4V11c-1.7 0-3.2-.5-4.5-1.4V15a6 6 0 1 1-6-6v3.4A2.6 2.6 0 1 0 11.6 15V3z"/></svg></a>
-        <a href="#" target="_blank" rel="noopener" aria-label="YouTube" class="rede"><svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg></a>
-      </div>
-    </div>
-  </footer>
-
-</body>
-</html>

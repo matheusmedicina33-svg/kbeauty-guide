@@ -1,0 +1,140 @@
+# Configuração do painel Pages CMS (app.pagescms.org)
+media:
+  input: imagens
+  output: /imagens
+  categories: [image]
+  rename: safe
+
+content:
+  - name: comparacoes
+    label: Comparações
+    type: collection
+    path: _comparacoes
+    filename: "{fields.slug}.md"
+    view:
+      primary: title
+      fields: [title, status, ordem]
+      sort: ordem
+      order: asc
+    fields:
+      - name: title
+        label: Nome do objetivo (ex. Acne e oleosidade)
+        type: string
+        required: true
+      - name: slug
+        label: Endereço da página (sem acento e sem espaço, ex. acne)
+        type: string
+        required: true
+      - name: ordem
+        label: Ordem de exibição (1 aparece primeiro)
+        type: number
+      - name: status
+        label: Status
+        type: select
+        options:
+          values:
+            - name: publicado
+              label: Publicado
+            - name: em_breve
+              label: Em breve
+      - name: descricao_curta
+        label: Descrição curta (aparece no card)
+        type: string
+      - name: titulo_pagina
+        label: Título da página
+        type: string
+      - name: subtitulo
+        label: Subtítulo da página
+        type: text
+      - name: produtos
+        label: Produtos
+        type: object
+        list: true
+        fields:
+          - { name: nome, label: Nome do produto, type: string, required: true }
+          - { name: imagem, label: Foto do produto, type: image }
+          - { name: link_afiliado, label: Link de afiliado, type: string }
+          - { name: loja, label: Nome da loja (aparece no botão), type: string, default: Amazon }
+          - { name: destaque, label: Mostrar na página inicial, type: boolean }
+          - { name: foco, label: Foco (etiqueta colorida), type: string }
+          - name: cor
+            label: Cor da etiqueta
+            type: select
+            options:
+              values:
+                - { name: rosa, label: Rosa }
+                - { name: verde, label: Verde }
+                - { name: lilas, label: Lilás }
+                - { name: azul, label: Azul }
+          - { name: resumo, label: Resumo (uma frase), type: text }
+          - { name: tags, label: Etiquetas pequenas do card, type: string, list: true }
+          - { name: tipo_pele, label: Tipo de pele (tabela resumo), type: string }
+          - { name: ativos, label: Ativos principais, type: string, list: true }
+          - { name: mecanismo, label: Como atuam na pele, type: text }
+          - { name: evidencia, label: O que diz a evidência, type: text }
+          - { name: evidencia_produto, label: Ingrediente x produto, type: text }
+          - { name: atencao, label: Pontos de atenção, type: string, list: true }
+          - { name: para_quem, label: Para quem faz mais sentido, type: text }
+          - { name: inci, label: Composição INCI completa, type: text }
+      - name: referencias
+        label: Referências desta comparação
+        type: object
+        list: true
+        fields:
+          - { name: texto, label: Referência, type: text }
+          - { name: link, label: Link, type: string }
+
+  - name: inicio
+    label: Página inicial
+    type: file
+    path: _data/inicio.yml
+    fields:
+      - { name: sobretitulo, label: Texto pequeno acima do título, type: string }
+      - { name: titulo, label: Título principal, type: string }
+      - { name: descricao, label: Descrição, type: text }
+      - { name: imagem_hero, label: Foto grande do topo, type: image }
+      - { name: frase_manuscrita, label: Frase manuscrita, type: text }
+
+  - name: paginas
+    label: Páginas de texto
+    type: group
+    items:
+      - name: metodologia
+        label: Metodologia
+        type: file
+        path: metodologia.html
+        fields:
+          - { name: layout, type: string, hidden: true, default: pagina }
+          - { name: menu, type: string, hidden: true, default: Metodologia }
+          - { name: title, label: Título, type: string }
+          - { name: subtitulo, label: Subtítulo, type: text }
+          - { name: body, label: Texto, type: rich-text }
+      - name: transparencia
+        label: Transparência
+        type: file
+        path: transparencia.html
+        fields:
+          - { name: layout, type: string, hidden: true, default: pagina }
+          - { name: menu, type: string, hidden: true, default: Transparência }
+          - { name: title, label: Título, type: string }
+          - { name: subtitulo, label: Subtítulo, type: text }
+          - { name: body, label: Texto, type: rich-text }
+      - name: referencias
+        label: Referências
+        type: file
+        path: referencias.html
+        fields:
+          - { name: layout, type: string, hidden: true, default: pagina }
+          - { name: menu, type: string, hidden: true, default: Referências }
+          - { name: title, label: Título, type: string }
+          - { name: subtitulo, label: Subtítulo, type: text }
+          - { name: body, label: Texto, type: rich-text }
+
+  - name: site
+    label: Redes sociais
+    type: file
+    path: _data/site.yml
+    fields:
+      - { name: instagram, label: Link do Instagram, type: string }
+      - { name: tiktok, label: Link do TikTok, type: string }
+      - { name: youtube, label: Link do YouTube, type: string }
