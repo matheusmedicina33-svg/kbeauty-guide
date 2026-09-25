@@ -1,0 +1,3 @@
+{% if c.status == "publicado" %}<a href="{{ c.url | relative_url }}" class="card-objetivo"><h3>{{ c.title }}</h3><p>{{ c.descricao_curta }}</p><span class="link-objetivo">Ver comparação →</span></a>
+{% else %}<div class="card-objetivo em-breve"><h3>{{ c.title }}</h3><p>{{ c.descricao_curta }}</p><span class="etiqueta cinza">Em breve</span></div>
+{% endif %}
