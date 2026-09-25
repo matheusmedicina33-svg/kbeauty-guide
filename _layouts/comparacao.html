@@ -1,0 +1,100 @@
+---
+layout: default
+---
+  <section class="pagina-topo">
+    <div class="container">
+      <p class="migalha"><a href="{{ '/' | relative_url }}">Início</a> / <a href="{{ '/comparacoes/' | relative_url }}">Comparações</a> / {{ page.title }}</p>
+      <h1>{{ page.titulo_pagina | default: page.title }}</h1>
+      {% if page.subtitulo %}<p>{{ page.subtitulo }}</p>{% endif %}
+    </div>
+  </section>
+
+  <section class="secao">
+    <div class="container">
+      <div class="caixa-aviso">
+        Alguns links desta página são de afiliado. Se você comprar por eles, podemos receber uma comissão sem custo adicional para você.
+        <a href="{{ '/transparencia.html' | relative_url }}">Saiba mais</a>.
+      </div>
+
+{% if page.status != "publicado" or page.produtos == nil or page.produtos.size == 0 %}
+      <div class="texto"><p>Esta comparação está sendo preparada. Volte em breve!</p></div>
+{% else %}
+      <div class="texto"><h2>Resumo rápido</h2></div>
+      <div class="tabela-rolagem">
+        <table class="tabela-resumo">
+          <thead>
+            <tr><th>Produto</th><th>Ativos principais</th><th>Tipo de pele</th><th>Faz mais sentido para</th></tr>
+          </thead>
+          <tbody>
+          {% for p in page.produtos %}
+            <tr>
+              <td><a href="#produto-{{ forloop.index }}">{{ p.nome }}</a></td>
+              <td>{{ p.ativos | join: ", " }}</td>
+              <td>{{ p.tipo_pele }}</td>
+              <td>{{ p.foco }}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+  {% for p in page.produtos %}
+      <article class="analise-produto" id="produto-{{ forloop.index }}">
+        <div class="analise-cabecalho">
+          <div class="produto-foto">{% if p.imagem.size > 0 %}<img src="{{ p.imagem | relative_url }}" alt="{{ p.nome | escape }}">{% endif %}</div>
+          <div>
+            {% if p.foco.size > 0 %}<span class="etiqueta {{ p.cor | default: 'rosa' }}">Foco: {{ p.foco }}</span>{% endif %}
+            <h2>{{ p.nome }}</h2>
+            {% if p.resumo.size > 0 %}<p>{{ p.resumo }}</p>{% endif %}
+          </div>
+        </div>
+
+        {% if p.ativos and p.ativos.size > 0 %}
+        <h3>Ativos principais</h3>
+        <ul>{% for a in p.ativos %}<li>{{ a }}</li>{% endfor %}</ul>
+        {% endif %}
+
+        {% if p.mecanismo.size > 0 %}<h3>Como atuam na pele</h3>{{ p.mecanismo | markdownify }}{% endif %}
+
+        {% if p.evidencia.size > 0 or p.evidencia_produto.size > 0 %}
+        <h3>O que diz a evidência</h3>
+        {{ p.evidencia | markdownify }}
+        {% if p.evidencia_produto.size > 0 %}<div class="nota-evidencia"><strong>Ingrediente x produto:</strong> {{ p.evidencia_produto }}</div>{% endif %}
+        {% endif %}
+
+        {% if p.atencao and p.atencao.size > 0 %}
+        <h3>Pontos de atenção</h3>
+        <ul>{% for a in p.atencao %}<li>{{ a }}</li>{% endfor %}</ul>
+        {% endif %}
+
+        {% if p.para_quem.size > 0 %}<h3>Para quem faz mais sentido</h3>{{ p.para_quem | markdownify }}{% endif %}
+
+        {% if p.inci.size > 0 %}
+        <details class="inci">
+          <summary>Ver composição completa (INCI)</summary>
+          <p>{{ p.inci }}</p>
+        </details>
+        {% endif %}
+
+        {% if p.link_afiliado.size > 0 %}
+        <div class="analise-compra">
+          <a href="{{ p.link_afiliado }}" target="_blank" rel="sponsored nofollow noopener" class="botao botao-cheio">Ver preço na {{ p.loja | default: "Amazon" }}</a>
+          <small>Link de afiliado. <a href="{{ '/transparencia.html' | relative_url }}">Saiba mais</a>.</small>
+        </div>
+        {% endif %}
+      </article>
+  {% endfor %}
+{% endif %}
+
+      <div class="texto">
+        {% if page.referencias and page.referencias.size > 0 %}
+        <h2>Referências desta comparação</h2>
+        <ol class="lista-refs">
+          {% for r in page.referencias %}<li>{{ r.texto }}{% if r.link.size > 0 %} <a href="{{ r.link }}" target="_blank" rel="noopener">Link</a>{% endif %}</li>
+          {% endfor %}
+        </ol>
+        {% endif %}
+        <p><small>Conteúdo informativo. Não substitui avaliação com dermatologista.</small></p>
+      </div>
+    </div>
+  </section>
